@@ -60,5 +60,5 @@ Copy file .env.example and rename it to .env
 
 ## Swagger
 
-Open url [Link Text](http://localhost:8000/swagger) from browser
+  After project is running, open [http://localhost:8000/swagger](http://localhost:8000/swagger) from browser
     
