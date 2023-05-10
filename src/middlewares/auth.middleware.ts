@@ -33,9 +33,7 @@ export function authMiddleware(isDontGetDetail?: boolean) {
         catch (err: any) {
             console.log(err);
             
-            return response.unauthorized({
-                result: err.message
-            }, res);
+            return response.unauthorized({}, res);
         }
     }
 }
