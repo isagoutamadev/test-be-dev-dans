@@ -6,6 +6,8 @@ import ErrorMiddleware from '@/middlewares/error.middleware';
 // import helmet from 'helmet';
 // import swaggerUI from 'swagger-ui-express';
 import response from "@/helpers/response.helper";
+import swaggerUi from 'swagger-ui-express';
+import * as swaggerJSON from './swagger.json';
 
 class App {
     public express: express.Application;
@@ -18,7 +20,7 @@ class App {
         this.initMiddleware();
         this.initControllers(controllers);
         this.initErrorMiddleware();
-        // this.initSwagger();
+        this.initSwagger();
         this.initNotFound();
     }
 
@@ -38,9 +40,9 @@ class App {
         });
     }
 
-    // private initSwagger(): void {
-    //     this.express.use('/node-swagger', swaggerUI.serve, swaggerUI.setup(swaggerJSON));
-    // }
+    private initSwagger(): void {
+        this.express.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerJSON));
+    }
 
     private initErrorMiddleware(): void {
         this.express.use(ErrorMiddleware);

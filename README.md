@@ -57,4 +57,8 @@ Copy file .env.example and rename it to .env
 ```bash
   node boilerplate.js make:module user-profile
 ```
+
+## Swagger
+
+Open url [Link Text](http://localhost:8000/swagger) from browser
     
